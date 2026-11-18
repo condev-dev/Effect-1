@@ -2,34 +2,37 @@
 
 # Spotlight Cards
 
-**Effect #01 by ConDev**
+Effect 01 · ConDev
 
-هالهی نور که با حرکت موس روی کارتها دنبالت میاد.
+هالهی نور نرم که با حرکت موس روی کارتها دنبال نشانگر میاد
 
-[دمو آنلاین](https://condev-dev.github.io/Effect-1) · [تلگرام](https://t.me/ConDev_TP) · [اینستاگرام](https://instagram.com/YOUR_USERNAME)
+<br>
 
-![preview](preview.gif)
+[**دمو آنلاین**](https://condev-dev.github.io/Effect-1)  ·  [**تلگرام**](https://t.me/ConDev_TP)  ·  [**اینستاگرام**](https://www.instagram.com/con.dev/)
+
+<br>
+
+![Preview](preview.gif)
 
 </div>
 
----
+<br>
 
-## ویژگیها
+## Features
 
-- بدون هیچ کتابخونه یا وابستگی
-- سبک و روان
-- ریسپانسیو
-- راحت برای شخصیسازی
+- بدون کتابخونه و وابستگی
+- سبک، روان و ریسپانسیو
+- شخصیسازی با چند متغیر CSS
 
-## نصب و استفاده
+## Usage
 
-1. ریپو رو دانلود کن یا کلون کن
-2. فایل `index.html` رو توی مرورگر باز کن
-3. تموم
+```bash
+git clone https://github.com/condev-dev/Effect-1.git
+```
 
-## شخصیسازی
+بعد فایل `index.html` رو توی مرورگر باز کن.
 
-رنگ و اندازهی نور از بالای فایل `style.css` قابل تغییره:
+## Customize
 
 ```css
 :root {
@@ -38,14 +41,14 @@
 }
 ```
 
-## لایسنس
+## License
 
-MIT، آزادانه استفاده کن.
+MIT
 
----
+<br>
 
 <div align="center">
 
-ساخته شده با ❤️ توسط **ConDev**
+Made by **ConDev**
 
 </div>
