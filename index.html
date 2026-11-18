@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Spotlight Cards</title>
+<style>
+:root{--bg:#060b09;--card:#0e1713;--line:#18261f;--muted:#7fa090;--rgb:52,211,153}
+*{box-sizing:border-box;margin:0;padding:0}
+body{min-height:100vh;display:grid;place-items:center;background:var(--bg);color:#fff;font-family:system-ui,sans-serif}
+.stage{width:min(92vw,640px);container-type:inline-size;padding:7cqw}
+.grid{display:grid;grid-template-columns:1fr;gap:2.4cqw;width:100%}
+.card{position:relative;height:16cqw;border-radius:3.2cqw;background:var(--card);padding:2.4cqw 5.5cqw;display:flex;flex-direction:column;justify-content:center;overflow:hidden;border:1px solid var(--line);--x:-999px;--y:-999px}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;background:radial-gradient(60cqw circle at var(--x) var(--y),rgba(var(--rgb),.95),transparent 60%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s;pointer-events:none}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(80cqw circle at var(--x) var(--y),rgba(var(--rgb),.16),transparent 50%);opacity:0;transition:opacity .3s;pointer-events:none}
+.grid:hover .card::before,.grid:hover .card::after,.grid.active .card::before,.grid.active .card::after{opacity:1}
+.card h3{font-size:4.8cqw;margin-bottom:.4cqw;position:relative;z-index:1}
+.card p{font-size:3.4cqw;color:var(--muted);position:relative;z-index:1}
+.frame.enter .card{animation:rise .7s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*110ms)}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="grid" id="grid">
+    <div class="card" id="c1"><h3>Fast</h3><p>Blazing performance</p></div>
+    <div class="card" id="c2"><h3>Secure</h3><p>Built-in protection</p></div>
+    <div class="card" id="c3"><h3>Simple</h3><p>Easy to use API</p></div>
+    <div class="card" id="c4"><h3>Scalable</h3><p>Grows with you</p></div>
+    <div class="card" id="c5"><h3>Modern</h3><p>Latest standards</p></div>
+    <div class="card" id="c6"><h3>Open</h3><p>Free and open source</p></div>
+  </div>
+</div>
+<script>
+const grid = document.getElementById('grid');
+const cards = document.querySelectorAll('.card');
+grid.addEventListener('pointermove', (e) => {
+  cards.forEach((card) => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--x', (e.clientX - r.left) + 'px');
+    card.style.setProperty('--y', (e.clientY - r.top) + 'px');
+  });
+  grid.classList.add('active');
+});
+grid.addEventListener('pointerleave', () => grid.classList.remove('active'));
+</script>
+</body>
+</html>
